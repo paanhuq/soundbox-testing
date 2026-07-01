@@ -38,10 +38,10 @@
 
 /* PRESENT — vertical modal (drawer easing for sheet-like slide) */
 .present.enter {
-  animation: present-in var(--motion-duration-normal) var(--motion-ease-drawer) both;
+  animation: present-in var(--motion-duration-slow) var(--motion-ease-drawer) both;
 }
 .present.exit {
-  animation: present-out var(--motion-duration-normal) var(--motion-ease-drawer) both;
+  animation: present-out var(--motion-duration-slow) var(--motion-ease-drawer) both;
 }
 
 @keyframes present-in {
