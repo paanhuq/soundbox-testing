@@ -36,6 +36,20 @@ export interface HomePageProps {
   onOpenProduct?: (id: string) => void;
 }
 
+/** Trigger the OS share sheet (Web Share API); copy the link as fallback. */
+async function shareProduct(name: string) {
+  const shareData = { title: name, text: "Giới thiệu bạn bè loa Zalopay", url: window.location.href };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(shareData.url);
+    }
+  } catch {
+    // user dismissed the share sheet or share failed — no-op
+  }
+}
+
 export function HomePage({ onOpenProduct }: HomePageProps) {
   const [tab, setTab] = useState("home");
 
@@ -68,7 +82,7 @@ export function HomePage({ onOpenProduct }: HomePageProps) {
             name={p.name}
             price={p.price}
             commission={p.commission}
-            onShare={() => {}}
+            onShare={() => shareProduct(p.name)}
             onClick={() => onOpenProduct?.(p.id)}
           />
         ))}
