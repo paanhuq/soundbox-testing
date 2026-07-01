@@ -89,7 +89,7 @@ export function HomePage({ onOpenProduct }: HomePageProps) {
       </section>
 
       <div className={styles.bottom} data-node-id="1:2126">
-        <TabBar activeKey={tab} onChange={setTab} />
+        <TabBar activeKey={tab} onChange={setTab} disabled />
         <div className={styles.homeIndicator} data-node-id="1:2128">
           <span className={styles.homeIndicatorBar} aria-hidden="true" />
         </div>

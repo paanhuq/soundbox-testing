@@ -18,6 +18,8 @@ export interface TabBarProps {
   activeKey: string;
   /** Fires with the tab key when a tab is pressed. */
   onChange?: (key: string) => void;
+  /** Disable tab switching (prototype: only the active tab has a screen). Default: false. */
+  disabled?: boolean;
   className?: string;
 }
 
@@ -32,7 +34,7 @@ export const defaultTabs: TabItem[] = [
  * Bottom tab bar. Figma: node 1:2127 ("TabBar"), variants tabbar/active + tabbar/inactive.
  * Active tab shows the blue 2px indicator and blue icon/label; others show the faint indicator.
  */
-export function TabBar({ items = defaultTabs, activeKey, onChange, className }: TabBarProps) {
+export function TabBar({ items = defaultTabs, activeKey, onChange, disabled = false, className }: TabBarProps) {
   return (
     <nav className={[styles.tabbar, className].filter(Boolean).join(" ")} data-node-id="1:2127">
       {items.map((tab) => {
@@ -43,7 +45,8 @@ export function TabBar({ items = defaultTabs, activeKey, onChange, className }: 
             key={tab.key}
             className={[styles.item, isActive ? styles.active : styles.inactive].join(" ")}
             aria-current={isActive ? "page" : undefined}
-            onClick={() => onChange?.(tab.key)}
+            disabled={disabled && !isActive}
+            onClick={() => !disabled && onChange?.(tab.key)}
           >
             <span className={styles.indicator} aria-hidden="true" />
             <span className={styles.content}>

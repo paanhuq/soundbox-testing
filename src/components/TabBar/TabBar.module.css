@@ -55,6 +55,17 @@
   opacity: 0.7;
 }
 
+/* Disabled (prototype: inactive tabs have no destination) — keep visuals,
+   remove the pointer affordance and press feedback. */
+.item:disabled {
+  cursor: default;
+}
+
+.item:disabled:active .content {
+  transform: none;
+  opacity: 1;
+}
+
 .icon {
   display: flex;
   align-items: center;

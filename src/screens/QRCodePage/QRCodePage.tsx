@@ -1,4 +1,5 @@
 import { QRTicket } from "../../components/QRTicket";
+import { NavigationBar } from "../../components/NavigationBar";
 import styles from "./QRCodePage.module.css";
 
 import cornerTop from "../../../assets/decor-corner-tl.svg";
@@ -24,6 +25,11 @@ export interface QRCodePageProps {
 export function QRCodePage({ code = "ZPL-ABCDEF", onClose }: QRCodePageProps) {
   return (
     <div className={styles.screen} data-node-id="0:2256" onClick={onClose}>
+      {/* Top nav: back button only, no title — returns to the product detail. */}
+      <div className={styles.nav} onClick={(e) => e.stopPropagation()}>
+        <NavigationBar onBack={onClose} />
+      </div>
+
       <img className={[styles.decor, styles.cornerTop].join(" ")} src={cornerTop} alt="" aria-hidden="true" />
       <img className={[styles.decor, styles.sparkle].join(" ")} src={sparkle} alt="" aria-hidden="true" />
       <img className={[styles.decor, styles.swirl].join(" ")} src={swirl} alt="" aria-hidden="true" />

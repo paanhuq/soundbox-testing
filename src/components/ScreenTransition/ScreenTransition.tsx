@@ -4,11 +4,12 @@ import styles from "./ScreenTransition.module.css";
 
 export type TransitionKind = "push" | "present";
 
-/** Duration (ms) each kind animates for — must match the motion tokens used
- *  in ScreenTransition.module.css (push = normal 300, present = slow 400). */
+/** Exit duration (ms) each kind animates for — used to keep the layer mounted
+ *  until its exit animation finishes. Must match the *exit* motion tokens in
+ *  ScreenTransition.module.css (push exit 300, present exit 300). */
 const DURATION: Record<TransitionKind, number> = {
   push: 300,
-  present: 400,
+  present: 300,
 };
 
 export interface ScreenLayerProps {

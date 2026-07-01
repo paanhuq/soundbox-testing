@@ -15,6 +15,15 @@
     linear-gradient(90deg, #f4fff5 0%, #f4fff5 100%);
 }
 
+/* Top nav (back only) — sits above the ticket, below the fixed status bar. */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
 .ticket {
   position: absolute;
   top: 50%;

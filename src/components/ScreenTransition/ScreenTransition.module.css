@@ -41,7 +41,7 @@
   animation: present-in var(--motion-duration-slow) var(--motion-ease-drawer) both;
 }
 .present.exit {
-  animation: present-out var(--motion-duration-slow) var(--motion-ease-drawer) both;
+  animation: present-out var(--motion-duration-normal) var(--motion-ease-exit) both;
 }
 
 @keyframes present-in {
