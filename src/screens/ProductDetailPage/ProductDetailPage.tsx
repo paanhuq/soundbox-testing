@@ -38,6 +38,25 @@ export function ProductDetailPage({ onBack, onDownloadQR }: ProductDetailPagePro
     { src: productAlt, muted: true },
   ];
 
+  // Trigger the OS share sheet (Web Share API). Falls back to copying the
+  // link where navigator.share isn't available (e.g. desktop browsers).
+  const handleShare = async () => {
+    const shareData = {
+      title: "Zalopay Box 1",
+      text: "Giới thiệu bạn bè loa Zalopay",
+      url: window.location.href,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.url);
+      }
+    } catch {
+      // user dismissed the share sheet or share failed — no-op
+    }
+  };
+
   return (
     <div className={styles.screen} data-node-id="0:2243">
       <div className={styles.nav}>
@@ -64,7 +83,7 @@ export function ProductDetailPage({ onBack, onDownloadQR }: ProductDetailPagePro
       </div>
 
       <div className={styles.bottom}>
-        <ActionButtonGroup onDownloadQR={onDownloadQR} onShare={() => {}} />
+        <ActionButtonGroup onDownloadQR={onDownloadQR} onShare={handleShare} />
       </div>
 
       {viewerSrc && (
