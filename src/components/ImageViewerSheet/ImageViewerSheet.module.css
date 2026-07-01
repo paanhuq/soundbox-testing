@@ -1,0 +1,87 @@
+/* ImageViewerSheet — Figma node 12:1667 ("Tray").
+   Full-screen image viewer: dark overlay (token other-overlay var(--color-primary-dark) 80%),
+   a close button top-right, and the enlarged image sliding up from the
+   bottom. Image insets: 16 left/right, 32 bottom. */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 31, 62, 0.8); /* other-overlay */
+  animation: fade-in var(--motion-duration-fast) var(--motion-ease-out) both;
+}
+
+.close {
+  position: absolute;
+  top: calc(16px + var(--safe-top, 0px));
+  right: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-ease-out);
+}
+
+.close:active {
+  transform: scale(0.9);
+}
+
+.closeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* image sheet slides up from the bottom */
+.sheet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px calc(32px + var(--safe-bottom, 0px));
+  animation: slide-up var(--motion-duration-normal) var(--motion-ease-drawer) both;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .sheet {
+    animation: none;
+  }
+}

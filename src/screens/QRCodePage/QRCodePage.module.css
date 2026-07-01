@@ -1,0 +1,67 @@
+/* QRCodePage ("QR") — Figma node 0:2256.
+   Full-screen green-wash overlay shown when "Tải mã QR" is pressed.
+   The QR ticket is centered; decorative swirls sit in the corners. */
+
+.screen {
+  position: relative;
+  width: var(--app-w);
+  height: var(--app-h);
+  border-radius: var(--app-radius);
+  overflow: hidden;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(233, 255, 230, 0.3) 28.765%),
+    linear-gradient(216.598deg, rgba(255, 255, 255, 0) 12.769%, rgba(205, 255, 232, 0.5) 41.11%),
+    linear-gradient(147.8deg, rgba(255, 255, 255, 0) 6.8886%, rgba(228, 255, 210, 0.4) 52.933%),
+    linear-gradient(90deg, #f4fff5 0%, #f4fff5 100%);
+}
+
+.ticket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 32px); /* 16px breathing room each side on narrow screens */
+  max-width: 312px;
+  display: flex;
+  justify-content: center;
+}
+
+/* decorations (Figma nodes 0:2257 / 0:2273 / 0:2274 / 0:2277) */
+.decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Vector — top-left edge (node 0:2273) */
+.cornerTop {
+  left: 0;
+  top: 74px;
+  width: 38px;
+  height: 66px;
+}
+
+/* Pattern sparkle (node 0:2274) */
+.sparkle {
+  left: 19.9%;
+  top: 14.1%;
+  width: 42px;
+  height: 50px;
+  transform: scaleX(-1);
+}
+
+/* Xoăn swirl — lower-left (node 0:2257) */
+.swirl {
+  left: -5.36%;
+  top: 70.52%;
+  width: 74px;
+  height: 75px;
+}
+
+/* Vector — bottom-right (node 0:2277); pinned to the right edge and
+   positioned from the bottom so it stays in the corner at any height. */
+.cornerBottom {
+  right: 0;
+  bottom: 61px; /* 812 - 669 - 82 ≈ 61 from the bottom in the original frame */
+  width: 47.5px;
+  height: 82px;
+}

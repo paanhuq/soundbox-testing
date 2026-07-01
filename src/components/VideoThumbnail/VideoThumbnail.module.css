@@ -1,0 +1,46 @@
+/* VideoThumbnail — Figma node I0:2243;30735:7535 ("Img").
+   Cover image with a 30% dark overlay and a centered 40px play button. */
+
+.root {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border: none;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.root:active {
+  transform: scale(0.99);
+}
+
+.root:active .play {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  transition: transform var(--motion-duration-instant) var(--motion-ease-out);
+}

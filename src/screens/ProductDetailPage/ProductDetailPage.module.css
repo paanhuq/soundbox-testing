@@ -1,0 +1,67 @@
+/* ProductDetailPage ("Product details") — Figma node 0:2243.
+   375px-wide scrollable screen. Nav bar is fixed at the top, the action
+   button group is fixed at the bottom; the content between scrolls with
+   padding to clear both fixed bars. */
+
+.screen {
+  position: relative;
+  width: var(--app-w);
+  height: var(--app-h);
+  background: var(--color-primary-white);
+  border-radius: var(--app-radius);
+  overflow: hidden;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+}
+
+/* fixed top nav — starts below the OS status bar (App-level, --statusbar-h) */
+.nav {
+  position: absolute;
+  top: calc(var(--safe-top) + var(--statusbar-h));
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--color-primary-white);
+}
+
+/* scrollable middle */
+.scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* clear the status bar area + fixed nav (60px) at the top and the fixed
+     bottom bar (~104px) at the bottom, plus the device safe-area insets. */
+  padding-top: calc(var(--safe-top) + var(--statusbar-h) + 60px);
+  padding-bottom: calc(104px + var(--safe-bottom));
+}
+
+/* content padding from Figma _Item_card: px 16, gap 24 between sections */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 16px 12px;
+}
+
+/* one section = title + body, gap 12 (Figma "Section") */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* gallery + info grouped with gap 16 (Figma "Containment") */
+.containment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* fixed bottom action bar */
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}

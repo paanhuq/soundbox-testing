@@ -1,0 +1,47 @@
+/* ProductInfo — Figma node I0:2243;30735:7456 ("Container").
+   Name (Bold 20/36), price (Regular 18/28), commission line
+   "Hoa hồng <green> / sản phẩm" (14/18). */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.name {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--color-primary-dark);
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-primary-dark);
+}
+
+.commission {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-variant-dark-400); /* dark-400 */
+}
+
+.commissionValue {
+  color: var(--color-primary-green); /* green */
+}

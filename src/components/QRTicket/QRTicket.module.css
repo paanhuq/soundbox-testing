@@ -1,0 +1,67 @@
+/* QRTicket — Figma node 0:2261 ("Frame 1000005387").
+   A 312px ticket: white QR panel on top, a perforated divider, then a
+   white caption panel (title + referral code). Rounded 16, soft shadow. */
+
+.ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 312px;
+  border-radius: 16px;
+  overflow: hidden;
+  filter: drop-shadow(0 2px 6px rgba(0, 31, 62, 0.15));
+}
+
+.qrPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: var(--color-primary-white);
+}
+
+.qrImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1; /* QR stays square, scales with the ticket */
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* perforated divider (node 0:2264) — full-bleed SVG with side notches */
+.divider {
+  display: block;
+  width: 100%;
+  height: 16px;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px 16px;
+  background: var(--color-primary-white);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  width: 100%;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--color-primary-dark);
+}
+
+.code {
+  margin: 0;
+  width: 100%;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-variant-dark-400); /* dark-400 */
+}

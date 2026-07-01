@@ -1,0 +1,119 @@
+/* ProductCard — Figma node 1:2124 ("_Item_card").
+   Tokens: Dark var(--color-primary-dark), Link var(--color-primary-blue), Dark-25 border var(--color-variant-dark-25),
+   Green-50 bg var(--color-variant-green-50), Green-800 text var(--color-variant-green-800). */
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--color-variant-dark-25);
+  border-radius: 12px;
+  background: var(--color-primary-white);
+  cursor: pointer;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.body {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.name {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-primary-blue);
+  transition:
+    transform var(--motion-duration-instant) var(--motion-ease-out),
+    opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.shareButton:active {
+  transform: scale(0.94);
+  opacity: 0.7;
+}
+
+.shareLabel {
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-primary-blue);
+}
+
+.shareIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.price {
+  margin: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+.commission {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: var(--color-variant-green-50);
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color-variant-green-800);
+  white-space: nowrap;
+}
+
+.commissionValue {
+  margin-left: 2px;
+  font-weight: 700;
+}

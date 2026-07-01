@@ -1,0 +1,83 @@
+/* ActionButtonGroup — Figma node I0:2243;30735:7537 ("Bottom").
+   Fixed bottom bar: secondary "Tải mã QR" (blue-25 bg, blue text) +
+   primary "Chia sẻ" (blue-800 bg, white text), then home indicator.
+   Tokens: spacing xl 16 (padding), lg 12 (gap), 2xl 20 / lg 12 (button
+   padding), radius pill 100, blue-25 var(--color-variant-blue-25), blue-800 var(--color-primary-blue). */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--color-primary-white);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  padding-bottom: calc(16px + var(--safe-bottom, 0px));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.button {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  transition:
+    background var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-instant) var(--motion-ease-out),
+    opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.button:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.secondary {
+  background: var(--color-variant-blue-25); /* blue-25 / zpblueSubtle */
+  color: var(--color-primary-blue); /* zpblue text */
+  font-weight: 400;
+}
+
+.primary {
+  background: var(--color-primary-blue); /* blue-800 / primary button bg */
+  color: var(--color-primary-white);
+  font-weight: 700;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Home indicator (node ...7539) */
+.homeIndicator {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  background: var(--color-primary-white);
+}
+
+.homeIndicatorBar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  border-radius: 10px;
+  background: var(--color-primary-dark);
+}

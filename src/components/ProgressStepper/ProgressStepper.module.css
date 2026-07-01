@@ -1,0 +1,72 @@
+/* ProgressStepper — Figma node 1:2090 ("Progress").
+   Tokens: Green var(--color-primary-green) (active number bg), Dark var(--color-primary-dark) (label),
+   white number text. Connector line uses Green dashed for completed,
+   plain for upcoming. */
+
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+}
+
+/* connector lines flanking the number */
+.line {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 1px;
+  align-self: center;
+}
+
+.lineActive {
+  border-top: 1.5px dashed var(--color-primary-green);
+}
+
+.lineMuted {
+  border-top: 1px dashed var(--color-variant-green-200); /* green-200, faint upcoming connector */
+}
+
+.lineHidden {
+  visibility: hidden;
+}
+
+.number {
+  display: flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: var(--color-primary-green);
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-primary-white);
+}
+
+.label {
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-primary-dark);
+  text-align: center;
+}

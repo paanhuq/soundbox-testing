@@ -1,0 +1,25 @@
+/* SectionTitle — Figma node 1:2123 ("Title Name").
+   Tokens: Green var(--color-primary-green) (accent bar), Dark var(--color-primary-dark) (text). */
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.bar {
+  flex-shrink: 0;
+  width: 4px;
+  height: 14px;
+  border-radius: 2px 0 0 2px;
+  background: var(--color-primary-green);
+}
+
+.text {
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-primary-dark);
+}

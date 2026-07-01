@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# os / editor cruft
+.DS_Store
+
+# Claude Code runtime
+.claude/
+
+# temp verification screenshots
+.*-shot.png
+.verify-*.png
+
+# external reference libraries (not part of this app)
+z-taste/
+zlp-icons/

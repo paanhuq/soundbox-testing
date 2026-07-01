@@ -1,0 +1,129 @@
+/* HomePage ("Homepage - 1st time") — Figma node 1:2085.
+   375x812 mobile screen. Layered green gradient background, nav bar,
+   referral title + progress stepper, white rounded product sheet,
+   bottom tab bar + home indicator. */
+
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--app-w);
+  height: var(--app-h);
+  /* clear the OS status bar area (desktop 54px / mobile safe-area) */
+  padding-top: calc(var(--safe-top) + var(--statusbar-h));
+  border-radius: var(--app-radius);
+  overflow: hidden;
+  /* layered green wash from Figma node 1:2085 */
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(233, 255, 230, 0.3) 28.765%),
+    linear-gradient(216.598deg, rgba(255, 255, 255, 0) 12.769%, rgba(205, 255, 232, 0.5) 41.11%),
+    linear-gradient(147.8deg, rgba(255, 255, 255, 0) 6.8886%, rgba(228, 255, 210, 0.4) 52.933%),
+    linear-gradient(90deg, var(--color-primary-white) 0%, var(--color-primary-white) 100%);
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+}
+
+/* decorative swirl in the top-left corner (node 1:2086) */
+.decorSwirl {
+  position: absolute;
+  left: 24.25px;
+  top: 75.87px;
+  width: 24.25px;
+  height: 41.79px;
+  pointer-events: none;
+}
+
+/* nav row height (control chip 40px + top/bottom breathing) so the heading
+   sits below the fixed App-level control */
+.navSpacer {
+  flex-shrink: 0;
+  width: 100%;
+  height: 56px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.heading {
+  position: relative;
+  width: 273px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: normal;
+  text-align: center;
+  color: var(--color-primary-dark);
+}
+
+.brandZalo {
+  color: var(--color-primary-blue);
+}
+.brandPay {
+  color: var(--color-primary-green);
+}
+
+/* sparkle next to the brand word (node 1:2117) */
+.decorHighlight {
+  position: absolute;
+  right: 38px;
+  top: -4px;
+  width: 18.7px;
+  height: 19.7px;
+  pointer-events: none;
+}
+
+.stepperWrap {
+  position: relative;
+  width: 100%;
+}
+
+/* white product sheet (node 1:2122 "Bg") */
+.sheet {
+  display: flex;
+  flex: 1 0 0;
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 16px 16px;
+  border-radius: 20px 20px 0 0;
+  background: var(--color-primary-white);
+  box-shadow: 0 2px 12px 0 rgba(0, 83, 59, 0.1);
+  overflow: hidden;
+}
+
+/* bottom area: tab bar + home indicator (node 1:2126) */
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.homeIndicator {
+  position: relative;
+  height: 24px;
+  width: 100%;
+  background: var(--color-primary-white);
+}
+
+.homeIndicatorBar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134px;
+  height: 5px;
+  border-radius: 10px;
+  background: var(--color-primary-dark);
+}

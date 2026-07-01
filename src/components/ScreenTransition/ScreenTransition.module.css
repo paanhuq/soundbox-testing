@@ -1,0 +1,62 @@
+/* ScreenTransition — one stacked, animated screen layer.
+   Layers stack absolutely so an entering screen slides over the one below.
+   Timing/easing come from motion tokens.
+
+   kind="push"    → horizontal (iOS navigation push): enter from the right.
+   kind="present" → vertical (iOS modal present): enter from the bottom. */
+
+.layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity;
+}
+
+/* PUSH — horizontal navigation */
+.push.enter {
+  animation: push-in var(--motion-duration-normal) var(--motion-ease-standard) both;
+}
+.push.exit {
+  animation: push-out var(--motion-duration-normal) var(--motion-ease-standard) both;
+}
+
+@keyframes push-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes push-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* PRESENT — vertical modal (drawer easing for sheet-like slide) */
+.present.enter {
+  animation: present-in var(--motion-duration-normal) var(--motion-ease-drawer) both;
+}
+.present.exit {
+  animation: present-out var(--motion-duration-normal) var(--motion-ease-drawer) both;
+}
+
+@keyframes present-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes present-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,71 @@
+/* NavigationBar — top header. Figma node 1:1893 ("Navigation Bar").
+   Tokens from Figma: Dark var(--color-primary-dark), Blue 25 var(--color-variant-blue-25), Blue 50 var(--color-variant-blue-50). */
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  /* Figma nav: pt 20, pb 16, pl 16. Right padding reserves room for the
+     fixed App-level control chip so the title keeps its gap from it. */
+  padding: 20px var(--nav-control-inset, 104px) 16px 16px;
+  background: transparent;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Left: back button + title, grows to fill */
+.leading {
+  display: flex;
+  flex: 1 0 0;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  transition: transform var(--motion-duration-instant) var(--motion-ease-out);
+}
+
+.iconButton:active {
+  transform: scale(0.88);
+}
+
+.iconButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.title {
+  flex: 1 0 0;
+  min-width: 0;
+  font-family: "SF Pro Display", -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-primary-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title.centered {
+  text-align: center;
+}

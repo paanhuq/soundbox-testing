@@ -1,0 +1,16 @@
+/* AffiliateFlow — Figma node I0:2243;30735:7466 ("Img").
+   The affiliate-process diagram (4 steps + connectors + illustrations) is
+   a decorative composite, exported flat as a single image (approach A).
+   The exported PNG already includes the green tint bg + border. */
+
+.root {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
